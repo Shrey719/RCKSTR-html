@@ -1,0 +1,19 @@
+<html>
+<script src="./mappings.js"></script>
+<script>
+function EncodeURL(url) {
+return Ultraviolet.codec.xor.encode(url)
+}
+function fetch_enc() {
+var url = prompt("url?")
+return EncodeURL(url)
+}
+function DecodeURL(t) {
+decodeUrl(t)
+}
+let x = window.location.href
+x.replace('https://i-have-a-prox.cyou/', '')
+console.log(x)
+document.write("<iframe width=100% height = 100% ></iframe>")
+</script>
+<html>

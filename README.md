@@ -9,6 +9,6 @@ Create star
 Create resources  
 Create community   
 Create games   
-Create about  
-Create news 
-Create discord DONE
+Create about    
+Create news    
+Create discord DONE   
