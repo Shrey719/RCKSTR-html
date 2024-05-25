@@ -4,11 +4,11 @@ RCKSTR-html is an html port of the original RCKSTR website, which was made on wo
 # TODO: 
 
 Create skelleton DONE  
-Create homepage DONE   
-Create star    
+Create homepage  DONE   
+Create star      DONE
 Create resources  
 Create community   
 Create games   
 Create about    
 Create news    
-Create discord DONE   
+Create discord   DONE   
