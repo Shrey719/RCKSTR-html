@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>RCKSTR x EthanDupe</title>
+	  <link rel="icon" type="image/x-icon" href="logo.ico">
+    <style type="text/css" media="screen">
+     * {
+       margin: 0; 
+       padding: 0;
+     }
+
+     div#banner { 
+       position: absolute; 
+       top: 0; 
+       left: 0; 
+       background-color: #000000; 
+       width: 100%; 
+     }
+     div#banner-content { 
+       width: 300px; 
+       margin: 0 auto; 
+       padding: 10px; 
+	   color: white;
+     }
+     div#main-content { 
+       padding-top: 70px;
+    }
+	.button_navigation {
+		background-color: #000000;
+        border: none;
+        color: rgb(255, 255, 255);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 4px 14px;
+        cursor: pointer;
+	}
+	.button_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.intro_container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.offerings_container {
+display:flex;
+justify-content: center;
+align-items: center;
+}
+    </style>
+</head>
+
+<body>
+  <div id="banner">
+    <div id="banner-content">
+		RCKSTR - The best games hub for school 
+    </div>
+  </div>
+</body>
+<body>
+<br>
+<br>
+<br>
+<div class='button_container'>
+<button onclick="goto('games')" class = 'button_navigation'>Games</button>
+<button onclick='goto("home")'  class = 'button_navigation' >Home </button>
+<button onclick='goto("star")'  class = 'button_navigation' >Star</button>
+<button onclick='goto("resources")' class = 'button_navigation' >Resources </button>
+<button onclick='goto("about")'  class = 'button_navigation' >About </button>
+<button onclick='goto("news")'  class = 'button_navigation' >News</button>
+<button onclick='goto("discord")'  class = 'button_navigation' >Discord</button>
+</div>
+<br>
+<br>
+<div class="intro_container">
+<h1 style="font-size: 30px";> Welcome to RCKSR x Ethandupe, an open source project made by USLdesigns, Ethandupe, and theskid22</h1>
+</div>
+<br>
+<div class="offerings_container">
+<p style="font-size: 35px;">We offer the interstellar project, The ultraviolet project, and games!<p>
+</div>
+<br>
+<br>
+<p style="font-size: 35px; display:flex; justify-content: center; align-items: center;">Email: rckstr@altmails.com</p>
+<br>
+<p style="font-size: 35px; display:flex; justify-content: center; align-items: center;">Discord: https://discord.gg/2Fw5sz9MQs</p>
+
+</body>
+<head>
+<script>
+	function goto(area) {
+	if (area == 'games') {
+		window.location.href = "./games.html"
+		}
+	if (area == "star") {
+		window.location.href = './star.html'
+		}
+	if (area == 'resources') 
+		{
+		window.location.href= './resources.html'
+		}
+	if (area == 'home') {
+		window.location.href = './main.html'
+		}
+	if (area == 'about') {window.location.href = './about.html'}
+	if (area == 'news') {window.location.href = './news.html'}
+	if (area == 'discord') {window.location.href = 'https://discord.gg/yJUGGs8EAA'}
+	}
+</script>
+</head>
+</html>
