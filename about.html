@@ -1,15 +1,159 @@
-RCKSTR x EthanDupe is an open source hub for all of your games and tools!
-<br>
-<br>
-Contributers: 
-<br>
-Ethan_dupe: Creating ethandupe, and helping out with development
-<br>
-USLDesigns3030: Helping with Ethandupe, creating RCKSTR.
-<br>
-theskid22: Creating asphalt, Creating the html port, helping with ethandupe
-<br>
-Titanium Network: (not affiliated with this project) Creating the ultraviolet template and the old discord exploit
-<br>
-Aiding: (vk6) (not affilated with this project) Creating dextensify
-<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RCKSTR x EthanDupe</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <style type="text/css" media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #2c2c2c;
+            color: #f4f4f4;
+        }
+
+        div#banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        div#banner-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        div#main-content {
+            padding-top: 70px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button_navigation {
+            background-color: #4a4a4a;
+            border: none;
+            color: #f4f4f4;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button_navigation:hover {
+            background-color: #6a6a6a;
+            transform: translateY(-2px);
+        }
+
+        .button_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            background-color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        .intro_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .offerings_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-info {
+            font-size: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <div id="banner-content">
+            RCKSTR - The best games hub for school
+        </div>
+    </div>
+    <div id="main-content">
+        <div class='button_container'>
+            <button onclick="goto('games')" class='button_navigation'>Games</button>
+            <button onclick='goto("home")' class='button_navigation'>Home</button>
+            <button onclick='goto("star")' class='button_navigation'>Star</button>
+            <button onclick='goto("about")' class='button_navigation'>About</button>
+            <button onclick='goto("news")' class='button_navigation'>News</button>
+            <button onclick='goto("discord")' class='button_navigation'>Discord</button>
+        </div>
+        <div class="intro_container">
+            <h1>Welcome to RCKSR x Ethandupe, an open-source project made by USLdesigns, Ethandupe, and theskid22</h1>
+        </div>
+		<div class="offerings_container">
+			Credits: 
+			<br>
+			Ethan_dupe: Creating ethandupe, and helping out with development
+			<br>
+			USLDesigns3030: Helping with Ethandupe, creating RCKSTR.
+			<br>
+			theskid22: Creating asphalt, Creating the html port, helping with ethandupe
+			<br>
+			Titanium Network: (not affiliated with this project) Creating the ultraviolet template and the old discord exploit
+			<br>
+			Aiding: (vk6) (not affilated with this project) Creating dextensify
+			<br>
+		</div>
+    </div>
+	<script>
+        function goto(area) {
+            if (area == 'games') {
+                window.location.href = "./games.html";
+            } else if (area == "star") {
+                window.location.href = './star/index.html';
+            } else if (area == 'resources') {
+                window.location.href= './resources.html';
+            } else if (area == 'home') {
+                window.location.href = './index.html';
+            } else if (area == 'about') {
+                window.location.href = './about.html';
+            } else if (area == 'news') {
+                window.location.href = './news.html';
+            } else if (area == 'discord') {
+                window.location.href = 'https://discord.gg/yJUGGs8EAA';
+            }
+        }
+    </script>
+</body>
+</html>
