@@ -7,7 +7,7 @@ RCKSTR-html is an html port of the original RCKSTR website, which was made on wo
 Create skelleton DONE  
 Create homepage  DONE     
 Create star      DONE   
-Create resources     
+Create resources NUKED 
 Create community   
 Create games   
 Create about    
