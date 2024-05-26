@@ -1,19 +1,30 @@
-<html>
-<body>
-<style>
-	.divgames {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: fit-content;
-	}
-	div#banner {
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: #000000;
-	width: 100%;
-	z-index: 1000;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RCKSTR x EthanDupe</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <style type="text/css" media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #2c2c2c;
+            color: #f4f4f4;
+        }
+
+        div#banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         div#banner-content {
@@ -26,12 +37,65 @@
             font-size: 20px;
         }
 
-</style>
-<br>
-<br>
-<br>
-	<div class = divgames>
-    <a href="./games/minecraft152/minecraft152.html">Eaglercraft 1.5.2</a>
+        div#main-content {
+            padding-top: 70px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button_navigation {
+            background-color: #4a4a4a;
+            border: none;
+            color: #f4f4f4;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button_navigation:hover {
+            background-color: #6a6a6a;
+            transform: translateY(-2px);
+        }
+
+        .button_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            background-color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+		.games_container {
+			text-align:center;
+		}
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <div id="banner-content">
+            RCKSTR - The best games hub for school
+        </div>
+    </div>
+    <div id="main-content">
+        <div class='button_container'>
+            <button onclick="goto('games')" class='button_navigation'>Games</button>
+            <button onclick='goto("home")' class='button_navigation'>Home</button>
+            <button onclick='goto("star")' class='button_navigation'>Star</button>
+            <button onclick='goto("about")' class='button_navigation'>About</button>
+            <button onclick='goto("news")' class='button_navigation'>News</button>
+            <button onclick='goto("discord")' class='button_navigation'>Discord</button>
+        </div>
+    </div>
+	<div class='games_container' >
+	<a href="./games/minecraft152/minecraft152.html">Eaglercraft 1.5.2</a>
     <br>
     <a href="./games/minecraft188.html">Eaglercraft 1.8.8</a>
     <br>
@@ -51,19 +115,24 @@
     <br>
     <a href="./games/TerrariaMP.html">Terraria Multiplayer </a>
 	</div>
-	    <div id="banner">
-        <div id="banner-content">
-            RCKSTR - The best games hub for school
-        </div>
-    </div>
-</body>
-<head>
     <script>
-        
+        function goto(area) {
+            if (area == 'games') {
+                window.location.href = "./games.html";
+            } else if (area == "star") {
+                window.location.href = './star/index.html';
+            } else if (area == 'resources') {
+                window.location.href= './resources.html';
+            } else if (area == 'home') {
+                window.location.href = './index.html';
+            } else if (area == 'about') {
+                window.location.href = './about.html';
+            } else if (area == 'news') {
+                window.location.href = './news.html';
+            } else if (area == 'discord') {
+                window.location.href = 'https://discord.gg/yJUGGs8EAA';
+            }
+        }
     </script>
-    <style>
-
-    </style>
-</head>
-
+</body>
 </html>
