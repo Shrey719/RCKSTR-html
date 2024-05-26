@@ -1,113 +1,151 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>RCKSTR x EthanDupe</title>
-	  <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
     <style type="text/css" media="screen">
-     * {
-       margin: 0; 
-       padding: 0;
-     }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-     div#banner { 
-       position: absolute; 
-       top: 0; 
-       left: 0; 
-       background-color: #000000; 
-       width: 100%; 
-     }
-     div#banner-content { 
-       width: 300px; 
-       margin: 0 auto; 
-       padding: 10px; 
-	   color: white;
-     }
-     div#main-content { 
-       padding-top: 70px;
-    }
-	.button_navigation {
-		background-color: #000000;
-        border: none;
-        color: rgb(255, 255, 255);
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-        margin: 4px 14px;
-        cursor: pointer;
-	}
-	.button_container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.intro_container {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.offerings_container {
-display:flex;
-justify-content: center;
-align-items: center;
-}
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        div#banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        div#banner-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        div#main-content {
+            padding-top: 70px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button_navigation {
+            background-color: #007BFF;
+            border: none;
+            color: #fff;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button_navigation:hover {
+            background-color: #0056b3;
+        }
+
+        .button_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .intro_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .offerings_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-info {
+            font-size: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
-
 <body>
-  <div id="banner">
-    <div id="banner-content">
-		RCKSTR - The best games hub for school 
+    <div id="banner">
+        <div id="banner-content">
+            RCKSTR - The best games hub for school
+        </div>
     </div>
-  </div>
+    <div id="main-content">
+        <div class='button_container'>
+            <button onclick="goto('games')" class='button_navigation'>Games</button>
+            <button onclick='goto("home")' class='button_navigation'>Home</button>
+            <button onclick='goto("star")' class='button_navigation'>Star</button>
+            <button onclick='goto("about")' class='button_navigation'>About</button>
+            <button onclick='goto("news")' class='button_navigation'>News</button>
+            <button onclick='goto("discord")' class='button_navigation'>Discord</button>
+        </div>
+        <div class="intro_container">
+            <h1>Welcome to RCKSR x Ethandupe, an open-source project made by USLdesigns, Ethandupe, and theskid22</h1>
+        </div>
+        <div class="offerings_container">
+            <p>We offer the interstellar project, The ultraviolet project, and games!</p>
+        </div>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:rckstr@altmails.com">rckstr@altmails.com</a></p>
+            <p>Discord: <a href="https://discord.gg/2Fw5sz9MQs" target="_blank">https://discord.gg/2Fw5sz9MQs</a></p>
+        </div>
+    </div>
+    <script>
+        function goto(area) {
+            if (area == 'games') {
+                window.location.href = "./games.html";
+            } else if (area == "star") {
+                window.location.href = './star/index.html';
+            } else if (area == 'resources') {
+                window.location.href= './resources.html';
+            } else if (area == 'home') {
+                window.location.href = './index.html';
+            } else if (area == 'about') {
+                window.location.href = './about.html';
+            } else if (area == 'news') {
+                window.location.href = './news.html';
+            } else if (area == 'discord') {
+                window.location.href = 'https://discord.gg/yJUGGs8EAA';
+            }
+        }
+    </script>
 </body>
-<body>
-<br>
-<br>
-<br>
-<div class='button_container'>
-<button onclick="goto('games')" class = 'button_navigation'>Games</button>
-<button onclick='goto("home")'  class = 'button_navigation' >Home </button>
-<button onclick='goto("star")'  class = 'button_navigation' >Star</button>
-<button onclick='goto("about")'  class = 'button_navigation' >About </button>
-<button onclick='goto("news")'  class = 'button_navigation' >News</button>
-<button onclick='goto("discord")'  class = 'button_navigation' >Discord</button>
-</div>
-<br>
-<br>
-<div class="intro_container">
-<h1 style="font-size: 30px";> Welcome to RCKSR x Ethandupe, an open source project made by USLdesigns, Ethandupe, and theskid22</h1>
-</div>
-<br>
-<div class="offerings_container">
-<p style="font-size: 35px;">We offer the interstellar project, The ultraviolet project, and games!<p>
-</div>
-<br>
-<br>
-<p style="font-size: 35px; display:flex; justify-content: center; align-items: center;">Email: rckstr@altmails.com</p>
-<br>
-<p style="font-size: 35px; display:flex; justify-content: center; align-items: center;">Discord: https://discord.gg/2Fw5sz9MQs</p>
-
-</body>
-<head>
-<script>
-	function goto(area) {
-	if (area == 'games') {
-		window.location.href = "./games.html"
-		}
-	if (area == "star") {
-		window.location.href = './star/index.html'
-		}
-	if (area == 'resources') 
-		{
-		window.location.href= './resources.html'
-		}
-	if (area == 'home') {
-		window.location.href = './index.html'
-		}
-	if (area == 'about') {window.location.href = './about.html'}
-	if (area == 'news') {window.location.href = './news.html'}
-	if (area == 'discord') {window.location.href = 'https://discord.gg/yJUGGs8EAA'}
-	}
-</script>
-</head>
 </html>
