@@ -9,5 +9,5 @@ Create homepage  DONE
 Create star      DONE   
 Create resources NUKED 
 Create games     
-Create about    
+Create about     DONE
 Create discord   DONE   
