@@ -8,8 +8,6 @@ Create skelleton DONE
 Create homepage  DONE     
 Create star      DONE   
 Create resources NUKED 
-Create community   
-Create games   
+Create games     
 Create about    
-Create news    
 Create discord   DONE   
