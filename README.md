@@ -2,12 +2,6 @@
 RCKSTR-html is an html port of the original RCKSTR website, which was made on wordpress   
 
 # TODO: 
-
-
-Create skelleton DONE  
-Create homepage  DONE     
-Create star      DONE   
-Create resources NUKED 
-Create games     DONE  
-Create about     DONE  
-Create discord   DONE   
+Full site created - Move into making it actualy decent    
+Add more games   
+Add a dynamic version for interstellar to work OR add inspect to asphalt  
