@@ -90,6 +90,7 @@
             <button onclick='goto("about")' class='button_navigation'>About</button>
             <button onclick='goto("news")' class='button_navigation'>News</button>
             <button onclick='goto("discord")' class='button_navigation'>Discord</button>
+			<button onclick='goto("ethandupe")' class='button_navigation'>Ethandupe</button>
         </div>
 		<div>
 			Update log: 
@@ -100,24 +101,6 @@
 			
 		</div>
     </div>
-    <script>
-        function goto(area) {
-            if (area == 'games') {
-                window.location.href = "./games.html";
-            } else if (area == "star") {
-                window.location.href = './star/index.html';
-            } else if (area == 'resources') {
-                window.location.href= './resources.html';
-            } else if (area == 'home') {
-                window.location.href = './index.html';
-            } else if (area == 'about') {
-                window.location.href = './about.html';
-            } else if (area == 'news') {
-                window.location.href = './news.html';
-            } else if (area == 'discord') {
-                window.location.href = 'https://discord.gg/yJUGGs8EAA';
-            }
-        }
-    </script>
+    <script src="./scripts/navigation.js"></script>
 </body>
 </html>

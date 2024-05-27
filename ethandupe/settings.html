@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+ <link rel="stylesheet" href="./css/settings.css">
+
+    <script>
+        function changeColorMode() {
+            const mode = document.getElementById('color-mode').value;
+            document.body.className = mode;
+            localStorage.setItem('theme', mode);
+        }
+
+        function changeFontFamily() {
+            const font = document.getElementById('font-family').value;
+            document.body.style.fontFamily = font;
+            localStorage.setItem('font', font);
+        }
+
+        // Set default theme and font to previously saved settings
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+            document.body.classList.add(savedTheme);
+            document.getElementById('color-mode').value = savedTheme;
+
+            const savedFont = localStorage.getItem('font') || 'Arial, sans-serif';
+            document.body.style.fontFamily = savedFont;
+            document.getElementById('font-family').value = savedFont;
+        });
+    </script>
+</head>
+<body>
+    <h1>Settings</h1>
+    <div class="mode-switcher">
+        <label for="color-mode">Choose Theme:</label>
+        <select id="color-mode" onchange="changeColorMode()">
+            <option value="dark-mode">Dark Mode</option>
+            <option value="light-mode">Light Mode</option>
+            <option value="blue-mode">Blue Mode</option>
+            <option value="green-mode">Green Mode</option>
+            <option value="red-mode">Red Mode</option>
+            <option value="purple-mode">Purple Mode</option>
+            <option value="orange-mode">Orange Mode</option>
+            <option value="pink-mode">Pink Mode</option>
+            <option value="yellow-mode">Yellow Mode</option>
+            <option value="brown-mode">Brown Mode</option>
+            <option value="grey-mode">Grey Mode</option>
+        </select>
+    </div>
+    <div class="font-switcher">
+        <label for="font-family">Choose Font:</label>
+        <select id="font-family" onchange="changeFontFamily()">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Courier New, monospace">Courier New</option>
+            <option value="Georgia, serif">Georgia</option>
+            <option value="Tahoma, sans-serif">Tahoma</option>
+            <option value="Times New Roman, serif">Times New Roman</option>
+            <option value="Trebuchet MS, sans-serif">Trebuchet MS</option>
+            <option value="Verdana, sans-serif">Verdana</option>
+        </select>
+    </div>
+    <div>
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+</body>
+</html>
+

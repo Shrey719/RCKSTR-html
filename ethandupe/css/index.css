@@ -1,0 +1,250 @@
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+        p, div > a {
+            display: inline-block;
+        }
+        button {
+            background-color: #008cba;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 12px; /* Adjusted for squarish round look */
+            transition: background-color 0.3s, box-shadow 0.3s;
+            font-size: 1em;
+            display: inline-block;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #005f6b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .popular {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .settings-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .settings-button button {
+            padding: 10px;
+            border-radius: 12px; /* Adjusted for squarish round look */
+            border: none;
+            cursor: pointer;
+            background-color: #008cba;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .settings-button button:hover {
+            background-color: #005f6b;
+        }
+        /* Light Mode */
+        .light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .light-mode h1, .light-mode h2 {
+            color: #333;
+        }
+        .light-mode .popular {
+            color: #e74c3c;
+        }
+        .light-mode button {
+            background-color: #008cba;
+            color: white;
+        }
+        .light-mode button:hover {
+            background-color: #005f6b;
+        }
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        .dark-mode h1, .dark-mode h2 {
+            color: #f4f4f4;
+        }
+        .dark-mode .popular {
+            color: #e74c3c;
+        }
+        .dark-mode button {
+            background-color: #555;
+            color: #f4f4f4;
+        }
+        .dark-mode button:hover {
+            background-color: #777;
+        }
+        /* Blue Mode */
+        .blue-mode {
+            background-color: #e0f7fa;
+            color: #00796b;
+        }
+        .blue-mode h1, .blue-mode h2 {
+            color: #00796b;
+        }
+        .blue-mode .popular {
+            color: #00796b;
+        }
+        .blue-mode button {
+            background-color: #00796b;
+            color: white;
+        }
+        .blue-mode button:hover {
+            background-color: #004d40;
+        }
+        /* Additional Modes */
+        .green-mode {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .green-mode h1, .green-mode h2 {
+            color: #2e7d32;
+        }
+        .green-mode .popular {
+            color: #2e7d32;
+        }
+        .green-mode button {
+            background-color: #2e7d32;
+            color: white;
+        }
+        .green-mode button:hover {
+            background-color: #1b5e20;
+        }
+        .red-mode {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .red-mode h1, .red-mode h2 {
+            color: #c62828;
+        }
+        .red-mode .popular {
+            color: #c62828;
+        }
+        .red-mode button {
+            background-color: #c62828;
+            color: white;
+        }
+        .red-mode button:hover {
+            background-color: #8e0000;
+        }
+        .purple-mode {
+            background-color: #f3e5f5;
+            color: #6a1b9a;
+        }
+        .purple-mode h1, .purple-mode h2 {
+            color: #6a1b9a;
+        }
+        .purple-mode .popular {
+            color: #6a1b9a;
+        }
+        .purple-mode button {
+            background-color: #6a1b9a;
+            color: white;
+        }
+        .purple-mode button:hover {
+            background-color: #38006b;
+        }
+        .orange-mode {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        .orange-mode h1, .orange-mode h2 {
+            color: #ef6c00;
+        }
+        .orange-mode .popular {
+            color: #ef6c00;
+        }
+        .orange-mode button {
+            background-color: #ef6c00;
+            color: white;
+        }
+        .orange-mode button:hover {
+            background-color: #e65100;
+        }
+        .pink-mode {
+            background-color: #fce4ec;
+            color: #d81b60;
+        }
+        .pink-mode h1, .pink-mode h2 {
+            color: #d81b60;
+        }
+        .pink-mode .popular {
+            color: #d81b60;
+        }
+        .pink-mode button {
+            background-color: #d81b60;
+            color: white;
+        }
+        .pink-mode button:hover {
+            background-color: #880e4f;
+        }
+        .yellow-mode {
+            background-color: #fffde7;
+            color: #fbc02d;
+        }
+        .yellow-mode h1, .yellow-mode h2 {
+            color: #fbc02d;
+        }
+        .yellow-mode .popular {
+            color: #fbc02d;
+        }
+        .yellow-mode button {
+            background-color: #fbc02d;
+            color: white;
+        }
+        .yellow-mode button:hover {
+            background-color: #f57f17;
+        }
+        .brown-mode {
+            background-color: #efebe9;
+            color: #6d4c41;
+        }
+        .brown-mode h1, .brown-mode h2 {
+            color: #6d4c41;
+        }
+        .brown-mode .popular {
+            color: #6d4c41;
+        }
+        .brown-mode button {
+            background-color: #6d4c41;
+            color: white;
+        }
+        .brown-mode button:hover {
+            background-color: #3e2723;
+        }
+        .grey-mode {
+            background-color: #eceff1;
+            color: #37474f;
+        }
+        .grey-mode h1, .grey-mode h2 {
+            color: #37474f;
+        }
+        .grey-mode .popular {
+            color: #37474f;
+        }
+        .grey-mode button {
+            background-color: #37474f;
+            color: white;
+        }
+        .grey-mode button:hover {
+            background-color: #263238;
+        }

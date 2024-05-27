@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG05RYNDWG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YG05RYNDWG');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6081838269252191" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EthanDupe x RCKSTR</title>
+ <br>
+ <link rel="stylesheet" href="./css/index.css">
+
+
+    <script>
+        function Redirc(url) {
+            window.location.href = url;
+        }
+     
+      function changeFontFamily() {
+            const font = document.getElementById('font-family').value;
+            document.body.style.fontFamily = font;
+            localStorage.setItem('font', font);
+        }
+
+        function changeColorMode() {
+            const mode = document.getElementById('color-mode').value;
+            document.body.className = mode;
+            localStorage.setItem('theme', mode);
+        }
+
+        // Set default theme to dark mode or previously saved theme
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+            document.body.classList.add(savedTheme);
+            document.getElementById('color-mode').value = savedTheme;
+
+           
+        });
+    </script>
+</head>
+<body class="dark-mode">
+    <div class="settings-button">
+        <button onclick="Redirc('settings.html')">Settings</button>
+    </div>
+    <h1>EthanDupe x RCKSTR</h1>
+    <p id="randomPhrase"></p>
+    <div>
+        <button onclick="Redirc('./proxy/index.html')">Proxy</button>
+        <button onclick="Redirc('./games.html')">Games</button>
+    </div>
+    <div>
+        <p class="popular">Popular 🔥</p>
+        <button onclick="Redirc('./chat/index.html')">Chat</button>
+        <button onclick="Redirc('./3kh0/index.html')">3kh0</button>
+    </div>
+    <div>
+        <button onclick="Redirc('https://discord.gg/zDcVyByaU2')">Join our Discord</button>
+    </div>
+    <div>
+        
+       
+    </div>
+  
+
+    <script>
+        // Array of random phrases
+        const phrases = [
+            "Tech guys after me!",
+            "bro, no snitching",
+            "im poor.",
+            "IM HIM",
+            "ayo, no gyatts here"
+            "is it friday yet"
+            "rizzler?"
+        ];
+
+        // Function to get a random phrase
+        function getRandomPhrase() {
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            return phrases[randomIndex];
+        }
+
+        // Display the random phrase in the HTML
+        document.getElementById("randomPhrase").innerText = getRandomPhrase();
+    </script>
+</body>
+</html>
