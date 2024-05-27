@@ -1,0 +1,1 @@
+jQuery(document).ready(function(t){jQuery("#saswp-comment-rating-div").rateYo({rating:saswp_localize_front_data.rateyo_default_rating,spacing:"5px",onSet:function(n,a){t(this).next().next().val(n)}}).on("rateyo.change",function(n,a){var e=a.rating;t(this).next().text(e)})});;
