@@ -13,9 +13,8 @@ function goto(area) {
                 window.location.href = './news.html';
             } else if (area == 'discord') {
                 window.location.href = 'https://discord.gg/yJUGGs8EAA';
-            } 
-			 else if (area == 'ethandupe') {
-			 window.location.href = './ethandupe/index.html'
-			 } else if (area == "Math Sover") {
+            } else if (area == 'ethandupe') {
+		window.location.href = './ethandupe/index.html'
+	    } else if (area == "Math Solver") {
                 window.location.href = './mathsolver/index.html';
 }
