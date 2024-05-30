@@ -4,74 +4,71 @@
     <title>RCKSTR x EthanDupe</title>
     <link rel="icon" type="image/x-icon" href="logo.ico">
     <style type="text/css" media="screen">
-        /* Insert the updated CSS here */
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body {
-    background-color: black; /*changed, old was tacky*/
-    color: #f4f4f4;
-}
+        body {
+            background-color: black;
+            color: #f4f4f4;
+        }
 
+        div#main-content {
+            padding-top: 70px;
+            text-align: center;
+            padding: 20px;
+        }
 
-div#main-content {
-    padding-top: 70px;
-    text-align: center;
-    padding: 20px;
-}
+        .button_container {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 25px 25px;
+            background: linear-gradient(45deg, #FFD700, #000);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
 
-.button_container {
-        color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 25px 25px; /* Increased padding at the top */
-    background: linear-gradient(45deg, #FFD700, #000);
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
-}
+        .button_navigation {
+            background-color: black;
+            border: 2px solid #FFD700;
+            padding: 15px 32px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.button_navigation {
-    background-color: black; /* black background */
-    border: 2px solid #FFD700; /* Increased border size */
-    padding: 15px 32px; 
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        .button_navigation:hover {
+            background: linear-gradient(45deg, #000, #FFD700);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
+        }
 
-.button_navigation:hover {
-    background: linear-gradient(45deg, #000, #FFD700);
-    color: white; /* Changed from font-color */
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
-}
+        .intro_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-
-.intro_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.offerings_container {
-    display: flex;
-        font-size: 14px;
-    justify-content: center;
-    align-items: center;
-}
+        .offerings_container {
+            display: flex;
+            font-size: 14px;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -84,17 +81,14 @@ div#main-content {
         <button onclick="goto('discord')" class="button_navigation">Discord</button>
         <button onclick="goto('ethandupe')" class="button_navigation">Ethandupe</button>
         <button onclick="goto('mathsolver')" class="button_navigation">Math Solver</button>
-
     </div>
-   <div class="intro_container" style="margin-bottom: 15px;" align="center">
-    <h1 style="font-size: 28px;" align="center;">Welcome to RCKSTR x Ethandupe</h1> 
-</div>
-        <h2 style="font-size: 25px;" align="center" style="margin-bottom: 20px;">An open source project developed and maintained by USLDesigns, Ethandupe, and theskid22</h2>
-<body>
+    <div class="intro_container" style="margin-bottom: 15px;" align="center">
+        <h1 style="font-size: 28px;" align="center;">Welcome to RCKSTR x Ethandupe</h1>
+    </div>
+    <h2 style="font-size: 25px;" align="center" style="margin-bottom: 20px;">An open source project developed and maintained by USLDesigns, Ethandupe, and theskid22</h2>
     <div class="offerings_container" style="margin-bottom: 50px;">
         <p style="font-size: 20px;">We offer the interstellar project, The ultraviolet project, and games!</p>
     </div>
-</body>
     <p style="font-size: 35px; display: flex; justify-content: center; align-items: center;">Email: rckstr@altmails.com</p>
     <p style="font-size: 35px; display: flex; justify-content: center; align-items: center;">Discord: <a href="https://discord.gg/2Fw5sz9MQs" style="color: #FFD700;">https://discord.gg/2Fw5sz9MQs</a></p>
     <script src="./scripts/navigation.js"></script>
