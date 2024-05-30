@@ -12,10 +12,14 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        html, body {
+            height: 100%; /* Ensure html and body take full height */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
         body {
             background-color: black;
             color: #f4f4f4;
-            overflow-y: scroll; /* Enable vertical scrolling */
         }
 
         div#main-content {
@@ -123,7 +127,5 @@
                 });
         });
     </script>
-    
-   
 </body>
 </html>
