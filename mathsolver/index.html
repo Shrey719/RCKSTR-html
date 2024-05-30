@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCKSTR Math Solver</title>
+    <style>
+        :root {
+            --background-light: #f4f4f4;
+            --background-dark: #333;
+            --text-light: #000;
+            --text-dark: #fff;
+            --container-light: #fff;
+            --container-dark: #444;
+            --button-light: #007BFF;
+            --button-dark: #1e90ff;
+            --button-hover-light: #0056b3;
+            --button-hover-dark: #1c86ee;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: var(--background-light);
+            color: var(--text-light);
+            transition: background 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background: var(--background-dark);
+            color: var(--text-dark);
+        }
+        #solver-container {
+            background: var(--container-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+            width: 90%;
+            max-width: 600px;
+        }
+        .dark-mode #solver-container {
+            background: var(--container-dark);
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        input[type="text"], input[type="number"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            margin: 0;
+        }
+        button {
+            padding: 10px 20px;
+            color: #fff;
+            background-color: var(--button-light);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-left: 5px;
+        }
+        button:hover {
+            background-color: var(--button-hover-light);
+        }
+        .dark-mode button {
+            background-color: var(--button-dark);
+        }
+        .dark-mode button:hover {
+            background-color: var(--button-hover-dark);
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        #toggle-mode {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            background-color: var(--button-light);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #toggle-mode:hover {
+            background-color: var(--button-hover-light);
+        }
+        .dark-mode #toggle-mode {
+            background-color: var(--button-dark);
+        }
+        .dark-mode #toggle-mode:hover {
+            background-color: var(--button-hover-dark);
+        }
+        #keypad {
+            margin-top: 20px;
+        }
+        #keypad button {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+        }
+        .tab-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        .tab.active {
+            border-bottom: 2px solid var(--button-light);
+        }
+        .dark-mode .tab.active {
+            border-bottom: 2px solid var(--button-dark);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+        .dark-mode footer {
+            color: var(--text-dark);
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        async function solveExpression() {
+            const expression = document.getElementById('expression').value;
+            const resultElement = document.getElementById('result');
+            resultElement.innerText = 'Calculating...';
+
+            try {
+                const response = await fetch('/solve', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ expression: expression })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    resultElement.innerText = `Result: ${data.result}`;
+                } else {
+                    resultElement.innerText = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                resultElement.innerText = `Error: ${error.message}`;
+            }
+        }
+        function insertSymbol(symbol) {
+            const expressionInput = document.getElementById('expression');
+            expressionInput.value += symbol;
+            expressionInput.focus();
+        }
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
+        }
+        function calculateCircleArea() {
+            const radius = document.getElementById('circle-radius').value;
+            const resultElement = document.getElementById('circle-result');
+            if (radius) {
+                const area = Math.PI * Math.pow(radius, 2);
+                resultElement.innerText = `Area: ${area.toFixed(2)}`;
+            } else {
+                resultElement.innerText = 'Please enter a radius.';
+            }
+        }
+        function calculateSquareArea() {
+            const side = document.getElementById('square-side').value;
+            const resultElement = document.getElementById('square-result');
+            if (side) {
+                const area = Math.pow(side, 2);
+                resultElement.innerText = `Area: ${area.toFixed(2)}`;
+            } else {
+                resultElement.innerText = 'Please enter the side length.';
+            }
+        }
+        function calculateCompoundArea() {
+            const rectangleWidth = document.getElementById('rectangle-width').value;
+            const rectangleHeight = document.getElementById('rectangle-height').value;
+            const triangleBase = document.getElementById('triangle-base').value;
+            const triangleHeight = document.getElementById('triangle-height').value;
+            const resultElement = document.getElementById('compound-area-result');
+
+            let area = 0;
+            if (rectangleWidth && rectangleHeight) {
+                area += rectangleWidth * rectangleHeight;
+            }
+            if (triangleBase && triangleHeight) {
+                area += 0.5 * triangleBase * triangleHeight;
+            }
+
+            if (area > 0) {
+                resultElement.innerText = `Area: ${area.toFixed(2)}`;
+            } else {
+                resultElement.innerText = 'Please enter valid dimensions.';
+            }
+        }
+        function calculateCompoundPerimeter() {
+            const rectangleWidth = document.getElementById('rectangle-width-perimeter').value;
+            const rectangleHeight = document.getElementById('rectangle-height-perimeter').value;
+            const triangleSideA = document.getElementById('triangle-side-a').value;
+            const triangleSideB = document.getElementById('triangle-side-b').value;
+            const triangleSideC = document.getElementById('triangle-side-c').value;
+            const resultElement = document.getElementById('compound-perimeter-result');
+
+            let perimeter = 0;
+            if (rectangleWidth && rectangleHeight) {
+                perimeter += 2 * (parseFloat(rectangleWidth) + parseFloat(rectangleHeight));
+            }
+            if (triangleSideA && triangleSideB && triangleSideC) {
+                perimeter += parseFloat(triangleSideA) + parseFloat(triangleSideB) + parseFloat(triangleSideC);
+            }
+
+            if (perimeter > 0) {
+                resultElement.innerText = `Perimeter: ${perimeter.toFixed(2)}`;
+            } else {
+                resultElement.innerText = 'Please enter valid dimensions.';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('expression').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    solveExpression();
+                }
+            });
+            document.getElementById('circle-radius').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCircleArea();
+                }
+            });
+            document.getElementById('square-side').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateSquareArea();
+                }
+            });
+            document.getElementById('rectangle-width').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundArea();
+                }
+            });
+            document.getElementById('rectangle-height').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundArea();
+                }
+            });
+            document.getElementById('triangle-base').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundArea();
+                }
+            });
+            document.getElementById('triangle-height').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundArea();
+                }
+            });
+            document.getElementById('rectangle-width-perimeter').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundPerimeter();
+                }
+            });
+            document.getElementById('rectangle-height-perimeter').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundPerimeter();
+                }
+            });
+            document.getElementById('triangle-side-a').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundPerimeter();
+                }
+            });
+            document.getElementById('triangle-side-b').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundPerimeter();
+                }
+            });
+            document.getElementById('triangle-side-c').addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    calculateCompoundPerimeter();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="toggle-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <div id="solver-container">
+        <div class="tab-container">
+            <div class="tab active" data-tab="tab-math-solver" onclick="showTab('tab-math-solver')">Math Solver</div>
+            <div class="tab" data-tab="tab-circle-area" onclick="showTab('tab-circle-area')">Circle Area</div>
+            <div class="tab" data-tab="tab-square-area" onclick="showTab('tab-square-area')">Square Area</div>
+            <div class="tab" data-tab="tab-compound-area" onclick="showTab('tab-compound-area')">Compound Area</div>
+            <div class="tab" data-tab="tab-compound-perimeter" onclick="showTab('tab-compound-perimeter')">Compound Perimeter</div>
+        </div>
+        <div id="tab-math-solver" class="tab-content active">
+            <h1>RCKSTR Math Solver</h1>
+            <div class="input-container">
+                <input type="text" id="expression" placeholder="Enter mathematical expression">
+                <button onclick="solveExpression()">Solve</button>
+            </div>
+            <div id="keypad">
+                <button onclick="insertSymbol('√')">√</button>
+                <button onclick="insertSymbol('π')">π</button>
+                <button onclick="insertSymbol('^')">^</button>
+                <button onclick="insertSymbol('(')">(</button>
+                <button onclick="insertSymbol(')')">)</button>
+                <button onclick="insertSymbol('/')">/</button>
+                <button onclick="insertSymbol('*')">*</button>
+                <button onclick="insertSymbol('-')">-</button>
+                <button onclick="insertSymbol('+')">+</button>
+            </div>
+            <p id="result"></p>
+        </div>
+        <div id="tab-circle-area" class="tab-content">
+            <h1>Calculate Circle Area</h1>
+            <div class="input-container">
+                <input type="number" id="circle-radius" placeholder="Enter radius">
+                <button onclick="calculateCircleArea()">Calculate</button>
+            </div>
+            <p id="circle-result"></p>
+        </div>
+        <div id="tab-square-area" class="tab-content">
+            <h1>Calculate Square Area</h1>
+            <div class="input-container">
+                <input type="number" id="square-side" placeholder="Enter side length">
+                <button onclick="calculateSquareArea()">Calculate</button>
+            </div>
+            <p id="square-result"></p>
+        </div>
+        <div id="tab-compound-area" class="tab-content">
+            <h1>Calculate Compound Area</h1>
+            <div class="input-container">
+                <input type="number" id="rectangle-width" placeholder="Rectangle width">
+                <input type="number" id="rectangle-height" placeholder="Rectangle height">
+            </div>
+            <div class="input-container">
+                <input type="number" id="triangle-base" placeholder="Triangle base">
+                <input type="number" id="triangle-height" placeholder="Triangle height">
+                <button onclick="calculateCompoundArea()">Calculate</button>
+            </div>
+            <p id="compound-area-result"></p>
+        </div>
+        <div id="tab-compound-perimeter" class="tab-content">
+            <h1>Calculate Compound Perimeter</h1>
+            <div class="input-container">
+                <input type="number" id="rectangle-width-perimeter" placeholder="Rectangle width">
+                <input type="number" id="rectangle-height-perimeter" placeholder="Rectangle height">
+            </div>
+            <div class="input-container">
+                <input type="number" id="triangle-side-a" placeholder="Triangle side A">
+                <input type="number" id="triangle-side-b" placeholder="Triangle side B">
+                <input type="number" id="triangle-side-c" placeholder="Triangle side C">
+                <button onclick="calculateCompoundPerimeter()">Calculate</button>
+            </div>
+            <p id="compound-perimeter-result"></p>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 The Rockstar Team
+    </footer>
+</body>
+</html>
