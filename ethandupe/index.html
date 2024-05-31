@@ -10,7 +10,50 @@
 
         gtag('config', 'G-YG05RYNDWG');
     </script>
-
+        <script> // WARNING. CHANGES MADE TO THE UI WILL NOT FULLY REFLECT CHANGES MADE IN STAR BECAUSE OF THE WAY IT IS LOADED. 
+    
+            function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+              }
+        
+            document.addEventListener("DOMContentLoaded", function() {
+              loadHTML('/header.html', 'header');
+              loadHTML('/footer.html', 'footer');
+            });
+            </script>
+            <script>
+                function goto(area) {
+            if (area == 'games') {
+                window.location.href = "/games.html";
+            } else if (area == "star") {
+                window.location.href = '/star/index.html';
+            } else if (area == 'resources') {
+                window.location.href= '/resources.html';
+            } else if (area == 'home') {
+                window.location.href = '/index.html';
+            } else if (area == 'about') {
+                window.location.href = '/about.html';
+            } else if (area == 'news') {
+                window.location.href = '/news.html';
+            } else if (area == 'discord') {
+                window.location.href = 'https://discord.gg/yJUGGs8EAA';
+            } else if (area == 'ethandupe') {
+                window.location.href = '/ethandupe/index.html';
+            } else if (area == 'mathsolver') {
+                window.location.href = '/mathsolver/index.html';
+            }
+        }
+    </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6081838269252191" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
@@ -48,6 +91,7 @@
     </script>
 </head>
 <body class="dark-mode">
+    <div id="header"></div> <!-- Placeholder for header content -->
     <div class="settings-button">
         <button onclick="Redirc('settings.html')">Settings</button>
     </div>
@@ -92,5 +136,6 @@
         // Display the random phrase in the HTML
         document.getElementById("randomPhrase").innerText = getRandomPhrase();
     </script>
+    <div id="footer"></div> <!-- Placeholder for footer content -->
 </body>
 </html>
