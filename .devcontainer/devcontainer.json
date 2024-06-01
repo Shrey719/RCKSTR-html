@@ -1,14 +1,13 @@
 {
   "name": "RCKSTR",
-  "dockerFile": "Dockerfile",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
   "extensions": [
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "ms-vscode.live-server"
   ],
-  "forwardPorts": [3000],
-  "postCreateCommand": "npm install",
-  "remoteUser": "vscode"
+  "forwardPorts": [5500],
+  "settings": {
+    "liveServer.settings.port": 5500,
+    "terminal.integrated.shell.linux": "/bin/bash"
+  }
 }
