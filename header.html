@@ -19,22 +19,70 @@
             cursor: pointer;
             border-radius: 5px;
             font-size: 16px;
+            position: relative;
         }
-        .button_navigation .fa-gear {
-            margin-right: 5px;
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown_content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dropdown_content .button_navigation {
+            color: black;
+            background-color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+        }
+        .dropdown_content .button_navigation:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown_content {
+            display: block;
         }
     </style>
 </head>
 <body>
     <div class="button_container">
         <button onclick="goto('home')" class="button_navigation">Home</button>
-        <button onclick="goto('games')" class="button_navigation">Games</button>
-        <button onclick="goto('star')" class="button_navigation">Star</button>
-        <button onclick="goto('about')" class="button_navigation">About</button>
-        <button onclick="goto('news')" class="button_navigation">News</button>
-        <button onclick="goto('discord')" class="button_navigation">Discord</button>
-        <button onclick="goto('ethandupe')" class="button_navigation">Ethandupe</button>
-        <button onclick="goto('mathsolver')" class="button_navigation">Math Solver</button>
+        
+        <div class="dropdown">
+            <button class="button_navigation">Util</button>
+            <div class="dropdown_content">
+                <button onclick="goto('games')" class="button_navigation">Games</button>
+                <button onclick="goto('star')" class="button_navigation">Star</button>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="button_navigation">Community</button>
+            <div class="dropdown_content">
+                <button onclick="goto('about')" class="button_navigation">About</button>
+                <button onclick="goto('news')" class="button_navigation">News</button>
+                <button onclick="goto('discord')" class="button_navigation">Discord</button>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="button_navigation">Misc</button>
+            <div class="dropdown_content">
+                <button onclick="goto('ethandupe')" class="button_navigation">Ethandupe</button>
+                <button onclick="goto('mathsolver')" class="button_navigation">Math Solver</button>
+            </div>
+        </div>
+
         <button onclick="goto('settings')" class="button_navigation">
             <i class="fa fa-gear"></i>
         </button>
