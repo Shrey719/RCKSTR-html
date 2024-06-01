@@ -59,7 +59,8 @@
 
         .theme-select {
             display: inline-block;
-            background: linear-gradient(45deg, #FFD700, #000);
+            background: black;
+            text-color: white;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             overflow: hidden;
@@ -72,8 +73,8 @@
         }
 
         .theme-select:hover {
-            color: black;
-            background-color: #FFD700;
+            color: white;
+            background-color: linear-gradient(45deg, #FFD700, #000);
         }
 
         .theme-select:focus {
@@ -122,11 +123,11 @@
     <div id="main-content">
         <h1 style="text-align: center;">Theme Switcher</h1>
         <select class="theme-select" onchange="setValue(this.value, 'theme')">
-            <option value="black">Set Theme Black</option>
-            <option value="white">Set Theme White</option>
-            <option value="pink">Set Theme Pink</option>
-            <option value="blue">Set Theme Blue</option>
-            <option value="red">Set Theme Red</option>
+            <option value="black">Set Theme: Black</option>
+            <option value="white">Set Theme: White</option>
+            <option value="pink">Set Theme: Pink</option>
+            <option value="blue">Set Theme: Blue</option>
+            <option value="red">Set Theme: Red</option>
         </select>
     </div>
 
