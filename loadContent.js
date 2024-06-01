@@ -13,6 +13,6 @@ function loadHTML(url, elementId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    loadHTML('header.html', 'header');
-    loadHTML('footer.html', 'footer');
+    loadHTML('/header.html', 'header');
+    loadHTML('/footer.html', 'footer');
 });
