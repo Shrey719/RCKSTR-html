@@ -1,45 +1,49 @@
 <html>
-<script>
-	// Function to set a cookie
-function setCookie(name, value, daysToExpire) {
-    var expires = "";
-    if (daysToExpire) {
-        var date = new Date();
-        date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-}
-
-// Function to get a cookie by name
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var cookies = document.cookie.split(';');
-    for(var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        while (cookie.charAt(0) == ' ') {
-            cookie = cookie.substring(1, cookie.length);
+<head>
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, daysToExpire) {
+            var expires = "";
+            if (daysToExpire) {
+                var date = new Date();
+                date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
         }
-        if (cookie.indexOf(nameEQ) == 0) {
-            return cookie.substring(nameEQ.length, cookie.length);
+
+        // Function to get a cookie by name
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1, cookie.length);
+                }
+                if (cookie.indexOf(nameEQ) == 0) {
+                    return cookie.substring(nameEQ.length, cookie.length);
+                }
+            }
+            return null;
         }
-    }
-    return null;
-}
 
-// Example usage
-function setValue(value, cookie) {
-	setCookie(cookie, value, 365)
-}
-<div id="header"></div> 
-<script src="loadContent.js"></script>
-<script src="./scripts/navigation.js"></script>
+        // Example usage
+        function setValue(value, cookie) {
+            setCookie(cookie, value, 365);
+            loadContent(); // Call the function to load content after setting the theme
+        }
+    </script>
+    <script src="loadContent.js"></script>
+    <script src="./scripts/navigation.js"></script>
+</head>
+<body>
+    <div id="header"></div>
 
-// To retrieve the value later
-</script>
-<button onclick="setValue('black', 'theme')">setThemeBlack</button>
-<button onclick="setValue('white', 'theme')">setThemeWhite</button>
-<button onclick="setValue('pink', 'theme')">setThemePink</button>
-<button onclick="setValue('blue', 'theme')">setThemeBlue</button>
-<button onclick="setValue('red', 'theme')">setThemeRed</button>
+    <button onclick="setValue('black', 'theme')">setThemeBlack</button>
+    <button onclick="setValue('white', 'theme')">setThemeWhite</button>
+    <button onclick="setValue('pink', 'theme')">setThemePink</button>
+    <button onclick="setValue('blue', 'theme')">setThemeBlue</button>
+    <button onclick="setValue('red', 'theme')">setThemeRed</button>
+</body>
 </html>
