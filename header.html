@@ -14,12 +14,15 @@
         .button_navigation {
             padding: 10px 20px;
             border: none;
-            background-color: #007BFF;
+            background-color: black;
             color: white;
             cursor: pointer;
             border-radius: 5px;
             font-size: 16px;
             position: relative;
+        }
+        .button_navigation .fa {
+            margin-left: 5px;
         }
         .dropdown {
             position: relative;
@@ -28,7 +31,7 @@
         .dropdown_content {
             display: none;
             position: absolute;
-            background-color: #f9f9f9;
+            background: linear-gradient(to bottom right, #007BFF, #00FF7F);
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
@@ -59,7 +62,7 @@
         <button onclick="goto('home')" class="button_navigation">Home</button>
         
         <div class="dropdown">
-            <button class="button_navigation">Utilities</button>
+            <button class="button_navigation">Utilities <i class="fa fa-caret-down"></i></button>
             <div class="dropdown_content">
                 <button onclick="goto('games')" class="button_navigation">Games</button>
                 <button onclick="goto('star')" class="button_navigation">Star</button>
@@ -67,7 +70,7 @@
         </div>
 
         <div class="dropdown">
-            <button class="button_navigation">Community</button>
+            <button class="button_navigation">Community <i class="fa fa-caret-down"></i></button>
             <div class="dropdown_content">
                 <button onclick="goto('about')" class="button_navigation">About</button>
                 <button onclick="goto('news')" class="button_navigation">News</button>
@@ -76,7 +79,7 @@
         </div>
 
         <div class="dropdown">
-            <button class="button_navigation">Misc</button>
+            <button class="button_navigation">Misc <i class="fa fa-caret-down"></i></button>
             <div class="dropdown_content">
                 <button onclick="goto('ethandupe')" class="button_navigation">Ethandupe</button>
                 <button onclick="goto('mathsolver')" class="button_navigation">Math Solver</button>
