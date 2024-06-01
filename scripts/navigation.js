@@ -17,5 +17,7 @@ function goto(area) {
         window.location.href = './ethandupe/index.html';
     } else if (area == 'mathsolver') {
         window.location.href = './mathsolver/index.html';
+    } else if (area == 'settings') {
+        window.location.href = './settings.html';
     }
 }
