@@ -21,5 +21,7 @@ function goto(area) {
         window.location.href = './settings.html';
     } else if (area == 'interstellar') {
         window.location.href = 'https://poor-kiri-rckstr-32bc0b60.koyeb.app/';
+    } else if (area == 'emulator') {
+        window.location.href = '/emulated_games/emulatorjs/index.html';      
     }
 }
