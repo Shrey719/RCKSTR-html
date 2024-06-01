@@ -122,7 +122,7 @@
     <div id="header"></div> <!-- Placeholder for header content -->
     <div id="main-content">
         <h1 style="text-align: center;">Theme Switcher</h1>
-        <select class="theme-select" onchange="if (value != 'black'){setValue(value.toString(), 'theme')}">
+        <select class="theme-select" onchange="if (value != 'black'){setValue(value.toString(), 'theme')} else {setValue('black', 'theme')}">
 			<option value ="black">Set Theme: Black</option>
             <option value="white">Set Theme: White</option>
             <option value="pink">Set Theme: Pink</option>
