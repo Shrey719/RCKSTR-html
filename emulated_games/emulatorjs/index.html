@@ -23,39 +23,39 @@
                 flex-direction: column;
             }
 
-            #box {
-                color: white;
-                height: 20em;
-                width: 30em;
-                max-width: 80%;
-                max-height: 80%;
-                background-color: linear-gradient(45deg, #FFD700, #000);
-                border-radius: 0.4em;
-                border: 2px solid #555;
-                position: relative;
-                flex-direction: column;
-                transition-duration: 0.2s;
-                overflow: hidden;
-                font-family: monospace;
-                font-weight: bold;
-                font-size: 20px;
-                margin: 5px;
-            }
+           #box {
+    color: white;
+    height: 20em;
+    width: 30em;
+    max-width: 80%;
+    max-height: 80%;
+    background-image: linear-gradient(45deg, #FFD700, #000);
+    border-radius: 0.4em;
+    border: 2px solid #555;
+    position: relative;
+    flex-direction: column;
+    transition-duration: 0.2s;
+    overflow: hidden;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+}
 
-            #box:hover, #box[drag] {
-                border-color: yellow;
-                color: linear-gradient(45deg, #FFD700, #000);
-            }
+#box:hover {
+    border-color: yellow;
+}
 
-            #input {
-                cursor: pointer;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0
-            }
+#input {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    backdrop-filter: blur(8px); /* Adjust the blur amount as needed */
+}
 
             #display {
                 width: 100%;
