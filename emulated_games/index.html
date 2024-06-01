@@ -69,11 +69,20 @@
             box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
         }
 
+        .frame {
+            position:absolute;
+            top:0;
+            left:0;
+            width:70%;
+            height:70%;
+        }
     </style>
 
 </head>
 <body>
-    <iframe class = "emulator_container" src="emulator_js/index.html" height="50%" width="50%"></iframe>
+    <div class="emulator_container">
+    <iframe src="emulator_js/index.html" class="frame"></iframe>
+    </div>
     <div id="footer"></div> <!-- Placeholder for footer content -->
 	<script src='/settings.js'></script>
 </body>
