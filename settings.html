@@ -29,12 +29,17 @@ function getCookie(name) {
 }
 
 // Example usage
-var valueToSave = "black";
-setCookie("background color", valueToSave, 365); // Save the value for 300 days
-console.log("Cookie saved with value: " + valueToSave);
+function setValue(value, cookie) {
+	setCookie(cookie, value, 365)
+}
 
 // To retrieve the value later
-var retrievedValue = getCookie("background color");
-console.log("Retrieved value from cookie: " + retrievedValue);
+let background = prompt("background color?")
+
+var retrievedValue = getCookie("theme");
+
 </script>
+<button onclick="setValue('theme', 'black')">setThemeBlack</button>
+<button onclick="setValue('theme', 'white')">setThemeWhite</button>
+<button onclick="setValue('theme', 'def')">setThemeDef</button>
 </html>
