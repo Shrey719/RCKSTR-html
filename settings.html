@@ -1,5 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #themeDropdown {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Define themes */
+        .black-theme {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .white-theme {
+            background-color: #fff;
+            color: #222;
+        }
+
+        .pink-theme {
+            background-color: #ff69b4;
+            color: #fff;
+        }
+
+        .blue-theme {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .red-theme {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Theme Switcher</h1>
+    </div>
+    <div class="container">
+        <select id="themeDropdown" onchange="setValue(this.value, 'theme')">
+            <option value="black">Black Theme</option>
+            <option value="white">White Theme</option>
+            <option value="pink">Pink Theme</option>
+            <option value="blue">Blue Theme</option>
+            <option value="red">Red Theme</option>
+        </select>
+    </div>
     <script>
         // Function to set a cookie
         function setCookie(name, value, daysToExpire) {
@@ -10,13 +89,19 @@
                 expires = "; expires=" + date.toUTCString();
             }
             document.cookie = name + "=" + value + expires + "; path=/";
+            applyTheme(value);
+        }
+
+        // Function to apply the selected theme
+        function applyTheme(theme) {
+            document.body.className = theme + "-theme";
         }
 
         // Function to get a cookie by name
         function getCookie(name) {
             var nameEQ = name + "=";
             var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
+            for(var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i];
                 while (cookie.charAt(0) == ' ') {
                     cookie = cookie.substring(1, cookie.length);
@@ -31,19 +116,13 @@
         // Example usage
         function setValue(value, cookie) {
             setCookie(cookie, value, 365);
-            loadContent(); // Call the function to load content after setting the theme
+        }
+
+        // To retrieve the value later
+        var savedTheme = getCookie('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
         }
     </script>
-    <script src="loadContent.js"></script>
-    <script src="./scripts/navigation.js"></script>
-</head>
-<body>
-    <div id="header"></div>
-
-    <button onclick="setValue('black', 'theme')">setThemeBlack</button>
-    <button onclick="setValue('white', 'theme')">setThemeWhite</button>
-    <button onclick="setValue('pink', 'theme')">setThemePink</button>
-    <button onclick="setValue('blue', 'theme')">setThemeBlue</button>
-    <button onclick="setValue('red', 'theme')">setThemeRed</button>
 </body>
 </html>
