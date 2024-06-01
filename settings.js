@@ -14,7 +14,9 @@ function getCookie(name) {
 }
 if (getCookie("theme") == 'black') {
 	document.body.style.background = "black";
+	document.body.style.color = 'white'
 }
 if (getCookie("theme") == 'white') {
-	document.body.style.background = "white"
+	document.body.style.background-color = "white"
+	document.body.style.color = "black"
 }
