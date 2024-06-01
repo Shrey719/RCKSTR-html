@@ -73,7 +73,7 @@
         await loadStyle('emulator.min.css');
     }
     const config = {};
-    config.gameUrl = "./rom_dumps/pokemon_emerald.gba";
+    config.gameUrl = window.EJS_gameUrl;
     config.dataPath = scriptPath;
     config.system = window.EJS_core;
     config.biosUrl = window.EJS_biosUrl;

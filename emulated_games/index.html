@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RCKSTR x EthanDupe</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+</head>
+     <body>
+     <div id="header"></div> <!-- Placeholder for header content -->
+    <script src="/loadContent.js"></script>
+    <script src="/scripts/navigation.js"></script>
+     </body>
+<head>
+    <style type="text/css" media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .emulator_container {   
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body {
+            background-color: black;
+            color: #f4f4f4;
+        }
+
+        div#main-content {
+            padding-top: 70px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button_container {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 25px 25px;
+            background: linear-gradient(45deg, #FFD700, #000);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .button_navigation {
+            background-color: black;
+            border: 2px solid #FFD700;
+            padding: 15px 32px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button_navigation:hover {
+            background: linear-gradient(45deg, #000, #FFD700);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
+        }
+
+    </style>
+
+</head>
+<body>
+    <iframe class = "emulator_container" src="emulator_js/index.html" height="50%" width="50%"></iframe>
+    <div id="footer"></div> <!-- Placeholder for footer content -->
+	<script src='/settings.js'></script>
+</body>
+</html>
