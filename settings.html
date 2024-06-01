@@ -1,11 +1,8 @@
+<!DOCTYPE html>
 <html>
-     <body>
-     <div id="header"></div> <!-- Placeholder for header content -->
-    <script src="loadContent.js"></script>
-    <script src="./scripts/navigation.js"></script>
-     </body>
-</body>
+
 <head>
+    <title>Theme Switcher</title>
     <style type="text/css" media="screen">
         * {
             margin: 0;
@@ -59,79 +56,85 @@
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
         }
+
+        .theme-select {
+            display: none;
+            position: absolute;
+            background: linear-gradient(45deg, #FFD700, #000);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .theme-select:hover {
+            color: white;
+            background-color: black;
+            content-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            border: none;
+            font-size: 16px;
+            margin: 10 auto; /* Center the buttons horizontally */
+        }
+
+        .theme-select:focus {
+            background-color: #ddd;
+        }
     </style>
-<script>
-	// Function to set a cookie
-function setCookie(name, value, daysToExpire) {
-    var expires = "";
-    if (daysToExpire) {
-        var date = new Date();
-        date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-}
-
-// Function to get a cookie by name
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var cookies = document.cookie.split(';');
-    for(var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        while (cookie.charAt(0) == ' ') {
-            cookie = cookie.substring(1, cookie.length);
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, daysToExpire) {
+            var expires = "";
+            if (daysToExpire) {
+                var date = new Date();
+                date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
         }
-        if (cookie.indexOf(nameEQ) == 0) {
-            return cookie.substring(nameEQ.length, cookie.length);
+
+        // Function to get a cookie by name
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1, cookie.length);
+                }
+                if (cookie.indexOf(nameEQ) == 0) {
+                    return cookie.substring(nameEQ.length, cookie.length);
+                }
+            }
+            return null;
         }
-    }
-    return null;
-}
 
-// Example usage
-function setValue(value, cookie) {
-	setCookie(cookie, value, 365)
-}
+        // Example usage
+        function setValue(value, cookie) {
+            setCookie(cookie, value, 365)
+        }
 
-// To retrieve the value later
-</script>
-<h1 style="text-align: center;">Theme Switcher</h1>
-<style>
-  .theme-select {
-      display: none;
-    position: absolute;
-    background: linear-gradient(45deg, #FFD700, #000);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-    overflow: hidden;
-  }
+        // To retrieve the value later
+    </script>
+</head>
 
-  .theme-select:hover {
-      color: white;
-    background-color: black;
-    content-align: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: block;
-    border: none;
-    font-size: 16px;
-    margin: 10 auto; /* Center the buttons horizontally */
-  }
+<body>
+    <div id="header"></div> <!-- Placeholder for header content -->
+    <div id="main-content">
+        <h1 style="text-align: center;">Theme Switcher</h1>
+        <select class="theme-select" onchange="setValue(this.value, 'theme')">
+            <option value="black">Set Theme Black</option>
+            <option value="white">Set Theme White</option>
+            <option value="pink">Set Theme Pink</option>
+            <option value="blue">Set Theme Blue</option>
+            <option value="red">Set Theme Red</option>
+        </select>
+    </div>
 
-  .theme-select:focus {
-      background-color: #ddd;
-
-  }
-</style>
-
-<select class="theme-select" onchange="setValue(this.value, 'theme')">
-  <option value="black">Set Theme Black</option>
-  <option value="white">Set Theme White</option>
-  <option value="pink">Set Theme Pink</option>
-  <option value="blue">Set Theme Blue</option>
-  <option value="red">Set Theme Red</option>
-</select>
-
+    <script src="loadContent.js"></script>
+    <script src="./scripts/navigation.js"></script>
+</body>
 
 </html>
