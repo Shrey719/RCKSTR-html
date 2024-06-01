@@ -1,0 +1,39 @@
+<html>
+<script>
+	// Function to set a cookie
+function setCookie(name, value, daysToExpire) {
+    var expires = "";
+    if (daysToExpire) {
+        var date = new Date();
+        date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+// Function to get a cookie by name
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for(var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) == 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    return null;
+}
+
+// Example usage
+var valueToSave = "example value";
+setCookie("myCookie", valueToSave, 30); // Save the value for 30 days
+console.log("Cookie saved with value: " + valueToSave);
+
+// To retrieve the value later
+var retrievedValue = getCookie("myCookie");
+console.log("Retrieved value from cookie: " + retrievedValue);
+</script>
+</html>
