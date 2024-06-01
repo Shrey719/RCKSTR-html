@@ -20,3 +20,8 @@ if (getCookie("theme") == 'white') {
 	document.body.style.background = "white"
 	document.body.style.color = "black"
 }
+// Just realised that this is 100% useless
+//if (getCookie("theme") == "def") { 
+	//document.body.style.background = "black"
+	
+//}
