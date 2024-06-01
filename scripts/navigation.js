@@ -19,5 +19,7 @@ function goto(area) {
         window.location.href = './mathsolver/index.html';
     } else if (area == 'settings') {
         window.location.href = './settings.html';
+    } else if (area == 'interstellar') {
+        window.location.href = 'https://poor-kiri-rckstr-32bc0b60.koyeb.app/';
     }
 }
