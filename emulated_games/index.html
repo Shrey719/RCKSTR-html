@@ -83,8 +83,32 @@
 </head>
 <body>
     <div class="emulator_container">
-    <iframe src="emulatorjs/index.html" class="frame" width="100%" height="100%"></iframe>
+    <iframe src="emulatorjs/index.html" class="frame" id = "emulatorjs"></iframe>
     </div>
 	<script src='/settings.js'></script>
+<script>
+//needed because 1. emulatorJS is weird, and 2. We are using iframes
+emujs = document.getElementById("emulatorjs").contentWindow;
+if (getCookie("theme") == 'black') {
+	emujs.document.body.style.background = "black";
+	emujs.document.body.style.color = 'white'
+}
+if (getCookie("theme") == 'white') {
+	emujs.document.body.style.background = "white"
+	emujs.document.body.style.color = "black"
+}
+if (getCookie("theme") == 'pink') {
+    emujs.document.body.style.background = "#f2b8e6"
+    emujs.document.body.style.color = "#fa4848"
+}
+if (getCookie("theme") == 'blue'){
+    emujs.document.body.style.background = "#b8e6f2"
+    emujs.document.body.style.color = "#4848fa"
+}
+if (getCookie("theme") == 'red'){
+    emujs.document.body.style.background = "#edabdf"
+    emujs.document.body.style.color = "#f55858"
+}
+</script>
 </body>
 </html>
