@@ -59,7 +59,7 @@ function reset() {
 // game loop
 function loop() {
   requestAnimationFrame(loop);
-// 15 FPS instead of 60
+  // 10 FPS instead of 60 (i think its 10?)
   if (++count < 6) {
     return;
   }
@@ -71,17 +71,20 @@ function loop() {
   snake.y += snake.dy;
 
   if (snake.x < 0) {
-    reset()
+	window.location.href = "deathscreen.html"
   }
   else if (snake.x >= canvas.width) {
-    reset()
+    window.location.href = "deathscreen.html"
+
   }
   
   if (snake.y < 0) {
-    reset()
+    window.location.href = "deathscreen.html"
+
   }
   else if (snake.y >= canvas.height) {
-    reset()
+    window.location.href = "deathscreen.html"
+
   }
 
   snake.cells.unshift({x: snake.x, y: snake.y});
