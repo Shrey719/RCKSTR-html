@@ -75,7 +75,6 @@ function loop() {
   }
   else if (snake.x >= canvas.width) {
     window.location.href = "deathscreen.html"
-
   }
   
   if (snake.y < 0) {
@@ -84,7 +83,6 @@ function loop() {
   }
   else if (snake.y >= canvas.height) {
     window.location.href = "deathscreen.html"
-
   }
 
   snake.cells.unshift({x: snake.x, y: snake.y});

@@ -1,9 +1,29 @@
 <html>
-You Died!<br>
-<button onclick=onc_restart()>Restart!</button>
+<div class = "maindiv" id = "rest_div">
+<center><p>You Died!</p></center>
+<center><button onclick=onc_restart() class="reset_button">Click to restart!</button></center>
+</div>
 <script>
 function onc_restart() {
 window.location.href = "index.html"
 }
 </script>
+<style>
+body {
+	background-color: black;
+}
+.maindiv {
+	font-size: 60px;
+	text-align: center;
+	color: white
+	
+}
+.reset_button {
+	width: fit-content;
+	color: white;
+	border: 2px solid white;
+	background-color: black;
+	font-size: 20px;
+}
+</style>
 </html>
